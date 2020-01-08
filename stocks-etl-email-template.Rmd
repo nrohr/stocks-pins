@@ -1,0 +1,39 @@
+---
+output: blastula::blastula_email
+---
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+library(blastula)
+library(pins)
+library(tidyverse)
+library(ggplot2)
+
+cta_button <-
+  add_cta_button(
+    url = "https://colorado.rstudio.com/rsc/stocks-app-pins/",
+    text = "Stock Portfolio App",
+    align = "center"
+  )
+
+board_register_rsconnect(name="rsconnect", server="https://colorado.rstudio.com/rsc/", key = Sys.getenv("rsc-api"))
+
+all_returns <- pin_get("nick/all_returns", board = "rsconnect")
+```
+
+Hi there,
+
+Your stock returns data has been updated and is attached to this email.
+
+```{r plot, echo=FALSE}
+ all_returns %>% 
+  gather(portfolio, return, -date) %>% 
+  group_by(portfolio) %>% 
+  ggplot(aes(x = date, y = return, color = portfolio)) +      
+  geom_line() 
+```
+
+To access this data in R or Python, follow the instructions [here](https://colorado.rstudio.com/rsc/all_returns_pins/).
+
+Or you can explore the data using our interactive web app:
+
+`r cta_button`

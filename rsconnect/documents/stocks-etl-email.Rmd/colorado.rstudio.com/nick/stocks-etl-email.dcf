@@ -1,0 +1,12 @@
+name: stocks-etl-email
+title: stocks-etl-email
+username: nick
+account: nick
+server: colorado.rstudio.com
+hostUrl: https://colorado.rstudio.com/rsc/__api__
+appId: 4070
+bundleId: 33090
+url: https://colorado.rstudio.com/rsc/content/4070/
+when: 1578496329.30329
+asMultiple: FALSE
+asStatic: FALSE

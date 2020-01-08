@@ -1,0 +1,12 @@
+name: stocks_portfolios_etl_pins
+title: Stocks Portfolios ETL (Pins)
+username: nick
+account: nick
+server: colorado.rstudio.com
+hostUrl: https://colorado.rstudio.com/rsc/__api__
+appId: 4067
+bundleId: 33098
+url: https://colorado.rstudio.com/rsc/content/4067/
+when: 1578496769.27266
+asMultiple: FALSE
+asStatic: FALSE

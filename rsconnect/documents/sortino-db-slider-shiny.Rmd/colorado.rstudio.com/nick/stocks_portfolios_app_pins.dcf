@@ -1,0 +1,12 @@
+name: stocks_portfolios_app_pins
+title: Stocks Portfolios App (Pins)
+username: nick
+account: nick
+server: colorado.rstudio.com
+hostUrl: https://colorado.rstudio.com/rsc/__api__
+appId: 4068
+bundleId: 33085
+url: https://colorado.rstudio.com/rsc/content/4068/
+when: 1578494040.86438
+asMultiple: FALSE
+asStatic: FALSE
