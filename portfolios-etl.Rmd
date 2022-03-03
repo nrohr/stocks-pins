@@ -1,7 +1,6 @@
 ---
 title: "Portfolios ETL (Pins)"
-resource_files:
-- config.yml
+resource_files: config.yml
 output:
   html_document:
     df_print: paged
@@ -62,6 +61,18 @@ Build three portfolios of different risk profiles
 
 Conservative is 45% to AGG
 
+## Section 2 heading
+
+| Col1 | Col2 | Col3 |
+|------|------|------|
+| 1    | 2    | 3    |
+| a    | b    | c    |
+| x    | y    | z    |
+
+-   Thing 1
+
+-   Thing 2
+
 ```{r Conservative Portfolio}
 w_cons <- c(0.25, 0.10, 0.10, 0.10, 0.45)
 conservative_portfolio_returns <- 
@@ -116,7 +127,6 @@ all_returns <- conservative_portfolio_returns %>%
   select(date, everything())
 ```
 
-
 Save results in a pin on RStudio Connect for use in in Shiny app etc
 
 ```{r}
@@ -142,7 +152,6 @@ Import portfolio returns for balanced, aggressive, conservative
 
 ```
 
-
 ```{r}
 portfolio_returns_risk_levels %>%
   gather(risk, return, -date) %>% 
@@ -151,8 +160,7 @@ portfolio_returns_risk_levels %>%
   facet_wrap(~risk, nrow = 3)
 ```
 
-
-```{r email_setup, include=FALSE}
+```{r email_setup}
 library(blastula)
 
 all_returns %>% 
@@ -165,4 +173,3 @@ render_connect_email(input = "stocks-etl-email-template.Rmd") %>%
     attachments = c("returns.csv")
   )
 ```
-
